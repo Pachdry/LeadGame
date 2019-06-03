@@ -21,7 +21,7 @@
     </ion-card-content>
   </ion-card>
   <ion-content padding class="form-content">
-    <form  (ngSubmit)="onSubmit()">
+    <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
       <ion-item>
         <ion-label position="floating" color="primary">First Name</ion-label>
         <ion-input type="text"></ion-input>
@@ -46,8 +46,8 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating" color="primary">Age Range</ion-label>
-        <ion-select cancelText="Cancel" okText="OK">
-          <ion-select-option *ngFor="let age of ageRanges" [value]="age">{{age}}</ion-select-option>
+        <ion-select cancelText="Cancel" okText="OK" formControlName="age">
+          <ion-select-option *ngFor="let a of ageRanges" [value]="a">{{a}}</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>

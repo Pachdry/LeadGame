@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-spinner',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./spinner.page.scss'],
 })
 export class SpinnerPage implements OnInit {
-
-  constructor() { }
+  foo = 10 
+  constructor() { 
+    timer(4000).subscribe(() => (this.foo = -1)); // In Constructor
+  }
 
   ngOnInit() {
   }

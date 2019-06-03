@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
   entryComponents: [],
   imports: [
     BrowserModule,
+    NgxWheelModule,
     IonicModule.forRoot(),
     AppRoutingModule
   ],

@@ -11,14 +11,17 @@ import { Router } from '@angular/router';
 export class HomePage implements OnInit {
 
 
-
+  validations_form: FormGroup;
   genders: Array<string>;
   ageRanges: Array<string>;
   incomeRanges: Array<string>;
+  age: string;
 
 
   constructor(
-    private router: Router
+    public formBuilder: FormBuilder,
+    private router: Router,
+    
 ) {}
 
    ngOnInit() {
@@ -43,6 +46,10 @@ export class HomePage implements OnInit {
         "$75k to $100k",
         "$100k+"
     ];
+    this.validations_form = this.formBuilder.group({
+      age: new FormControl(this.ageRanges[0], Validators.required),
+        });
+    //this.age = new FormControl(this.ageRanges[0])
   }
 
   onSubmit(values){
