@@ -52,7 +52,7 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating" color="primary">Income Ranges</ion-label>
-        <ion-select cancelText="Cancel" okText="OK">
+        <ion-select cancelText="Cancel" okText="OK" formControlName="income">
           <ion-select-option *ngFor="let ic of incomeRanges" [value]="ic">{{ic}}</ion-select-option>
         </ion-select>
       </ion-item>

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { NgxWheelModule } from 'ngx-wheel'; //<-- import here
 
@@ -18,6 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     NgxWheelModule,
+    HttpClientModule,
+    HttpModule,
     IonicModule.forRoot(),
     AppRoutingModule
   ],
