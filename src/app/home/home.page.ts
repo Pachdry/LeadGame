@@ -44,4 +44,9 @@ export class HomePage implements OnInit {
         "$100k+"
     ];
   }
+
+  onSubmit(values){
+      console.log(values);
+      this.router.navigate(["/spinner"]);
+    }
 }
